@@ -1,4 +1,5 @@
 import 'package:dentme_v1/AdminDashboard.dart';
+import 'package:dentme_v1/SecretaryDash.dart';
 import 'package:flutter/material.dart';
 import 'api_service.dart';
 
@@ -71,9 +72,19 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               );
           case 'Secretary':
-            break;
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => SecretaryDashboard(),
+              ),
+              );
           case 'Doctor':
-            break;
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => AdminDashboard(),
+              ),
+              );
           default:
             break;}
         // Navigate to the dashboard
@@ -83,7 +94,9 @@ class _LoginScreenState extends State<LoginScreen> {
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(e.toString())),
+        
       );
+      print(e.toString());
     } finally {
       setState(() {
         _isLoading = false;

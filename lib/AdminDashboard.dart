@@ -1,3 +1,5 @@
+import 'package:dentme_v1/SimpleTeethDiagram.dart';
+import 'package:dentme_v1/TeethDiagram.dart';
 import 'package:flutter/material.dart';
 import 'CreateUserDialog.dart';
 import 'EditUserDialog.dart';
@@ -220,8 +222,8 @@ class AdminContentArea extends StatelessWidget {
               );
         break;
       case 'Reports':
-        content = Center(child: Text('Reports Page (Under Construction)'));
-        break;
+        content = Center(child: SimpleTeethDiagramPage());
+        break;  
       case 'Settings':
         content = Center(child: Text('Settings Page (Under Construction)'));
         break;
